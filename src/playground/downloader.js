@@ -1,38 +1,3 @@
-# LaTeX Editor React Component
-
-## 1
-
-TBD
-
-## 2
-
-## Syntax Sets
-
-### Set1
-
-\cap \pm \cup \cdot \uplus \Cup \Cap \mp \times \sqcap \sqcup \bigsqcup \ast \wedge \vee \bigtriangleup \div \barwedge \veebar \bigtriangledown \star \triangleright \triangleleft \setminus \dotplus \lozenge \blacklozenge \bigstar \bigcirc \bullet \circ \amalg \dagger \square \blacksquare \bigoplus \bigotimes \blacktriangle \triangle \ddagger \wr \triangledown \blacktriangledown \bigodot \oplus \ominus \diamond \circledcirc \oslash \otimes \odot \circleddash \circledast 
-
-### Set2
-
-\therefore \partial \mathbb{P}\angle \because \imath \mathbb{N}\measuredangle \sphericalangle \mathbb{Z}\jmath \cdots \ddots \Re \mathbb{I}\varnothing \vdots \Im \mathbb{Q} \S \infty \forall \mathbb{R}\mho \P \exists \mathbb{C} \wp \copyright \top 
-
-### Set3
-
-\aa \AA \ae \AE \l \L \o \O \oe \OE \ss \SS \$ \pounds \cent \euro 
-
-### Set 4
-
-\sqsubset \sqsupset \sqsubseteq \sqsupseteq \subset \supset \subseteq \supseteq \nsubseteq \nsupseteq \subseteqq \supseteqq \nsubseteq \nsupseteqq \in \ni \notin 
-
-### Set 5
-
-{a}' {a}'' \dot{a} \ddot{a} \hat{a}  \check{a} \grave{a} \acute{a} \tilde{a} \breve{a} \bar{a} \vec{a} \not{a} a^{\circ}
-
-### Crawler
-
-爬取codecogs的latex語法圖片
-
-```js
 const fs = require('fs'),
     request = require('request');
 
@@ -65,5 +30,3 @@ const downloadPromise = (tex, setName) => {
         console.log(msg)
     }
 })(set1, 'set1');
-```
-
