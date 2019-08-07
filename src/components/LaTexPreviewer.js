@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import ReactDOM from 'react-dom';
+// import ReactDOM from 'react-dom';
 import Shortcut from './Shortcut'
 
 
@@ -20,7 +20,7 @@ const LaTexPreviewer = () => {
         <img src={"https://i.imgur.com/Nbvxf0C.png"} />
 
         <Shortcut handleAddTex={handleAddTex}/>
-        <h3>Input LaTeX: </h3>
+        <h3>Enter LaTeX: </h3>
         <textarea value={tex} onChange={handleTexChange} />
         <div id="present-tex">
             <h3>Preview:</h3>
