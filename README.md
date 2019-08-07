@@ -1,7 +1,5 @@
 # LaTeX Editor React Component
 
-> issue1 solved! :+1:
-
 ## 1
 
 TBD
@@ -12,23 +10,51 @@ TBD
 
 ### Set1
 
-\cap \pm \cup \cdot \uplus \Cup \Cap \mp \times \sqcap \sqcup \bigsqcup \ast \wedge \vee \bigtriangleup \div \barwedge \veebar \bigtriangledown \star \triangleright \triangleleft \setminus \dotplus \lozenge \blacklozenge \bigstar \bigcirc \bullet \circ \amalg \dagger \square \blacksquare \bigoplus \bigotimes \blacktriangle \triangle \ddagger \wr \triangledown \blacktriangledown \bigodot \oplus \ominus \diamond \circledcirc \oslash \otimes \odot \circleddash \circledast 
+```
+\cap \pm \cup \cdot \uplus \Cup \Cap \mp \times \sqcap \sqcup \bigsqcup \ast \wedge \vee \bigtriangleup \div \barwedge \veebar \bigtriangledown \star \triangleright \triangleleft \setminus \dotplus \lozenge \blacklozenge \bigstar \bigcirc \bullet \circ \amalg \dagger \square \blacksquare \bigoplus \bigotimes \blacktriangle \triangle \ddagger \wr \triangledown \blacktriangledown \bigodot \oplus \ominus \diamond \circledcirc \oslash \otimes \odot \circleddash \circledast
+```
 
 ### Set2
 
-\therefore \partial \mathbb{P}\angle \because \imath \mathbb{N}\measuredangle \sphericalangle \mathbb{Z}\jmath \cdots \ddots \Re \mathbb{I}\varnothing \vdots \Im \mathbb{Q} \S \infty \forall \mathbb{R}\mho \P \exists \mathbb{C} \wp \copyright \top 
+```
+\therefore \partial \mathbb{P} \angle \because \imath \mathbb{N} \measuredangle \sphericalangle \mathbb{Z} \jmath \cdots \ddots \Re \mathbb{I} \varnothing \vdots \Im \mathbb{Q} \S \infty \forall \mathbb{R} \mho \P \exists \mathbb{C} \wp \copyright \top 
+```
 
 ### Set3
 
+```
 \aa \AA \ae \AE \l \L \o \O \oe \OE \ss \SS \$ \pounds \cent \euro 
+```
 
 ### Set 4
 
-\sqsubset \sqsupset \sqsubseteq \sqsupseteq \subset \supset \subseteq \supseteq \nsubseteq \nsupseteq \subseteqq \supseteqq \nsubseteq \nsupseteqq \in \ni \notin 
+```
+\sqsubset \sqsupset \sqsubseteq \sqsupseteq \subset \supset \subseteq \supseteq \nsubseteq \nsupseteq \subseteqq \supseteqq \nsubseteq \nsupseteqq \in \ni \notin
+```
 
 ### Set 5
 
+```
 {a}' {a}'' \dot{a} \ddot{a} \hat{a}  \check{a} \grave{a} \acute{a} \tilde{a} \breve{a} \bar{a} \vec{a} \not{a} a^{\circ}
+```
+
+### Set 6
+
+```
+\widetilde{abc} \widehat{abc} \overleftarrow{abc} \overrightarrow{abc} \overline{abc} \underline{abc} \overbrace{abc} \underbrace{abc} \overset{a}{abc} \underset{a}{abc}
+```
+
+### Set 7
+
+```
+\mapsto \to \leftarrow \rightarrow \Leftarrow \Rightarrow \leftrightarrow\Leftrightarrow \leftharpoonup \rightharpoonup \leftharpoondown \rightharpoondown \leftrightharpoons \rightleftharpoons \xleftarrow[a]{b} \xrightarrow[a]{b} \overset{a}{\leftarrow} \overset{a}{\rightarrow} \underset{a}{\leftarrow} \underset{a}{\rightarrow}
+```
+
+### Set8
+
+```
+x^{a} x_{a} x_{b}^{a} {x_{a}}^{b} _{a}^{b}\textrm{C} \frac{a}{b} x\tfrac{a}{b} \frac{\partial }{\partial x} \frac{\partial^2 }{\partial x^2} \frac{\mathrm{d} }{\mathrm{d} x} \int \int_{a}^{b} \oint \oint_{a}^{b} \iint_{a}^{b} \bigcap \bigcap_{a}^{b} \bigcup \bigcup_{a}^{b} \lim_{x \to 0} \sum \sum_{a}^{b} \sqrt{x} \sqrt[n]{x} \prod \prod_{a}^{b} \coprod \coprod_{a}^{b}
+```
 
 ### Crawler
 

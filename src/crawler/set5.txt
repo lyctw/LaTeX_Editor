@@ -1,0 +1,1 @@
+{a}' {a}'' \dot{a} \ddot{a} \hat{a}  \check{a} \grave{a} \acute{a} \tilde{a} \breve{a} \bar{a} \vec{a} \not{a} a^{\circ}
