@@ -1,6 +1,6 @@
 # LaTeX Editor React Component
 
-> This is issue1 md
+> issue1 solved! :+1:
 
 ## 1
 
