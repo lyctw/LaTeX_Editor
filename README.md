@@ -1,8 +1,9 @@
 # LaTeX Editor React Component
 
-## 1
+## Directory
 
-TBD
+* crawler: 爬取codecogs的svg檔
+* src\components\mathquill-0.10.1\ : 放mathquill原生library，目前沒用到，現在是用react-mathquill，感覺沒在維護，之後可自己寫個wrapper component
 
 ## 2
 
