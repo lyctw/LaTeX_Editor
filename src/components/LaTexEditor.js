@@ -3,8 +3,7 @@ import MathQuill, { addStyles as addMathquillStyles } from 'react-mathquill'
  
 addMathquillStyles()
 
-const initialLatex =
-  '\\cos\\left(A\\right)=\\frac{b^2+c^2-a^2}{2\\cdot b\\cdot c}'
+const initialLatex = String.raw`x = \frac{-b \pm \sqrt{b^2 - 4ac}}{2a}`;
 
 export default class LaTexEditor extends React.Component {
   constructor(props) {
@@ -25,9 +24,11 @@ export default class LaTexEditor extends React.Component {
   render() {
     return (
       <div>
+        <p style={{color: "cadetblue"}}>DEMO 1: 和word輸入方程式相同，輸入LaTeX語法按空白鍵會自動渲染，並可以在編輯其中的變數，使用範例如下</p>
+        <img src={"https://cloud.githubusercontent.com/assets/225809/15163580/1bc048c4-16be-11e6-98a6-de467d00cff1.gif"} width="150px"/><br/>
         Math field:{' '}
         <MathQuill
-          className="mathquill-example-field"
+          className="mathquill-field"
           latex={this.state.latex}
           onChange={mathField => {
             const latex = mathField.latex()
@@ -40,15 +41,16 @@ export default class LaTexEditor extends React.Component {
             this.mathQuillEl = el
           }}
         />
-        <div className="result-container">
+        {/* <div className="result-container">
             <span>Raw latex:</span>
             <span className="result-latex">{this.state.latex}</span>
         </div>
         <div className="result-container">
             <span>Raw text:</span>
             <span className="result-latex">{this.state.text}</span>
-        </div>
-        <button onClick={this.resetField}>Reset field</button>
+        </div> */}
+
+        {/* <button onClick={this.resetField}>Reset field</button>
         
         <button 
             onClick={() => { 
@@ -62,7 +64,7 @@ export default class LaTexEditor extends React.Component {
                 const currentTex = this.mathQuillEl.latex();
                 this.mathQuillEl.latex(String.raw`${currentTex} \frac{}{}`)}
             }
-        >Insert fraction</button>
+        >Insert fraction</button> */}
       </div>
     )
   }
