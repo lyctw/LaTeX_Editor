@@ -6,10 +6,13 @@ import LaTexEditor from './components/LaTexEditor'
 const App = () => {
   return (
       <>
+      
           <LaTexEditor />
 
           <hr/>
+
           <LaTexPreviewer />
+
       </>
   )
 };
