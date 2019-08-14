@@ -1,17 +1,22 @@
-import React from 'react';
+import React, { useState } from 'react';
 import ReactDOM from 'react-dom';
-import LaTexPreviewer from './components/LaTexPreviewer'
-import LaTexEditor from './components/LaTexEditor'
+import RichEditor from './components/RichEditor'
 
 const App = () => {
+
+  let [content, setContent] = useState(''); // html string
+
+
   return (
       <>
-      
-          <LaTexEditor />
 
-          <hr/>
-
-          <LaTexPreviewer />
+        <RichEditor 
+          // bounds={this.props.bounds}
+          // editorRef={this.props.editorRef}
+          placeholder={'enter'}
+          // value={}
+          // onChange={(val) => {setContent(val)}}
+        />
 
       </>
   )

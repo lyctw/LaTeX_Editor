@@ -1,5 +1,8 @@
 # LaTeX Editor React Component
 
+[TODO]
+把Editor、Previewer，當成不同的功能，都能insert `<img>` with latex
+
 ## Directory
 
 * crawler: 爬取codecogs的svg檔
@@ -95,4 +98,5 @@ const downloadPromise = (tex, setName) => {
     }
 })(set1, 'set1');
 ```
+
 
