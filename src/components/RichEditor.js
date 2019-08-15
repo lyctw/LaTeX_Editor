@@ -1,9 +1,9 @@
 import React, { Component } from 'react'
-import LaTexPreviewer from './LaTexPreviewer'
 import LaTexEditor from './LaTexEditor'
 import ReactQuill from 'react-quill'
-
+import CustomToolbar from './CustomToolbar'
 import 'react-quill/dist/quill.snow.css'
+
 
 class RichEditor extends Component {
   constructor(props) {
@@ -15,19 +15,13 @@ class RichEditor extends Component {
 
   render() {
     const customModules = {
-      toolbar: [
-        [{ 'header': [1, 2, 3, false] }],
-        ['bold', 'italic', 'underline'],
-        ['link'],
-        [{ 'list': 'ordered'}, { 'list': 'bullet' }],
-        //['blockquote', 'strike'],
-        //['image'],
-        [{ 'align': [] }],
-        ['clean'],
-      ]
+      toolbar: {
+        container: '#toolbar'
+      }
     }
     return (
       <div>
+        <CustomToolbar />
         <ReactQuill
           id="quill"
           theme="snow"
@@ -44,7 +38,14 @@ class RichEditor extends Component {
           value={this.state.content}
         />
 
-        <LaTexEditor />
+        <LaTexEditor 
+          handleInsert={(latex) => {
+            const imgTag = `<img src="https://latex.codecogs.com/svg.latex?${latex}">`;
+            this.setState((prevState) => {
+              return {content: `${prevState.content} ${imgTag}`}
+            })
+          }}
+        />
         
       </div>
     )

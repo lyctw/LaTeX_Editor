@@ -9,7 +9,7 @@ const App = () => {
 
   return (
       <>
-
+      
         <RichEditor 
           // bounds={this.props.bounds}
           // editorRef={this.props.editorRef}

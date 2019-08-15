@@ -1,3 +1,4 @@
+
 # LaTeX Editor React Component
 
 [TODO]
@@ -8,9 +9,14 @@
 * crawler: 爬取codecogs的svg檔
 * src\components\mathquill-0.10.1\ : 放mathquill原生library，目前沒用到，現在是用react-mathquill，感覺沒在維護，之後可自己寫個wrapper component
 
-## 2
+## Quill
 
-## Syntax Sets
+* 為了客製化Button 使用HTML Custom Toolbar 綁定
+
+## LaTeX Syntax Svg Crawler
+
+<details><summary>Syntax Sets</summary>
+
 
 ### Set1
 
@@ -98,5 +104,10 @@ const downloadPromise = (tex, setName) => {
     }
 })(set1, 'set1');
 ```
+
+
+
+
+</details>
 
 
