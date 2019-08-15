@@ -5,34 +5,47 @@
  */
 
 import React from 'react';
+import fx_svg from '../img/fx.svg'
 
-const CustomToolbar = () => (
-    <div id="toolbar">
-        <span className="ql-formats">
-            <button className="ql-header" value="1"></button>
-            <button className="ql-header" value="2"></button>
+
+export default class CustomToolbar extends React.Component {
+    constructor(props) {
+        super(props);
+    }
+
+    render() {
+        return (
+            <div id="toolbar">
+                <span className="ql-formats">
+                    <select className="ql-header" defaultValue={""} onChange={e => e.persist()}>
+                        <option value="1"></option>
+                        <option value="2"></option>
+                        <option></option>
+                    </select>
                 
-            <button className="ql-bold"></button>
-            <button className="ql-italic"></button>
-            <button className="ql-underline"></button>     
+                    <button className="ql-bold"></button>
+                    <button className="ql-italic"></button>
+                    <button className="ql-underline"></button>     
+                
+                    <button className="ql-list" value="ordered"></button>
+                    <button className="ql-list" value="bullet"></button>
+                    <select className="ql-align"></select>      
+                
+                    <button className="ql-link"></button>
+                    <button className="ql-image"></button>
+                    {/* <button className="ql-video"></button> */}
         
-            <button className="ql-list" value="ordered"></button>
-            <button className="ql-list" value="bullet"></button>
-            <select className="ql-align"></select>      
-        
-            <button className="ql-link"></button>
-            <button className="ql-image"></button>
-            {/* <button className="ql-video"></button> */}
-        </span>
-        <span className="ql-formats">
-            <button className="ql-insertMath"></button>
-        </span>
-    </div>
-)
-
-export default CustomToolbar;
-  
-
+                    <button className="math" onClick={() => {
+                        // alert('click')
+                        this.props.onToggleModal();
+                    }}>
+                        <img src={fx_svg} />
+                    </button>
+                </span>
+            </div> 
+        ) 
+    }
+} 
 /*
 const customModules = {
       toolbar: [
