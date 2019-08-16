@@ -14,7 +14,7 @@ const Shortcut = ({handleAppendTex}) => {
 
                 {/* <button onClick={() => {handleAppendTex(' + ')}}><img src={add_svg} /></button> */}
                 {/* <button onClick={() => {handleAppendTex(' - ')}}><img src={minus_svg} /></button> */}
-                <button onClick={() => {handleAppendTex(String.raw` \times `)}}><img src={times_svg} /></button>
+                <button onClick={(e) => {e.preventDefault(); handleAppendTex(String.raw` \times `)}}><img src={times_svg} /></button>
                 <button onClick={() => {handleAppendTex(String.raw` \div `)}}><img src={div_svg} /></button>
                 <button onClick={() => {handleAppendTex(String.raw` \amalg `)}}><img src={amalg_svg} /></button>
                 <button onClick={() => {handleAppendTex(String.raw` \star `)}}><img src={star_svg} /></button>

@@ -17,6 +17,7 @@
     "@instructure/canvas-theme": "^6.9.0",
     "@instructure/ui-buttons": "^6.9.0",
     "@instructure/ui-elements": "^6.9.0",
+    "@instructure/ui-forms": "^6.9.0",
     "@instructure/ui-overlays": "^6.9.0",
     "@instructure/ui-tabs": "^6.9.0",
     "react": "^16.8.6",

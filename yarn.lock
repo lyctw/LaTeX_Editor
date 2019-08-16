@@ -862,6 +862,54 @@
     classnames "^2"
     prop-types "^15"
 
+"@instructure/ui-form-field@^6.9.0":
+  version "6.9.0"
+  resolved "https://registry.yarnpkg.com/@instructure/ui-form-field/-/ui-form-field-6.9.0.tgz#508dd5df3f16059c663fb861040dcc41c1a09739"
+  integrity sha512-j+S+W3KV2qp5w1u0hb/+OX2karqugxT6jyQtuahZG7IuyGU8Zk82RgEqbiN9aOeWVwrXTGMw0wbZwq37+qwsAw==
+  dependencies:
+    "@babel/runtime" "^7"
+    "@instructure/console" "^6.9.0"
+    "@instructure/ui-a11y" "^6.9.0"
+    "@instructure/ui-icons" "^6.9.0"
+    "@instructure/ui-layout" "^6.9.0"
+    "@instructure/ui-react-utils" "^6.9.0"
+    "@instructure/ui-themeable" "^6.9.0"
+    "@instructure/ui-utils" "^6.9.0"
+    "@instructure/uid" "^6.9.0"
+    classnames "^2"
+    prop-types "^15"
+
+"@instructure/ui-forms@^6.9.0":
+  version "6.9.0"
+  resolved "https://registry.yarnpkg.com/@instructure/ui-forms/-/ui-forms-6.9.0.tgz#9c1e661e165ba4c7cc9c16983269093f51bb0bf4"
+  integrity sha512-zhYwWjoAzohwrGvuBSuaz4V0OKk5Zo7aGo6D6bdcySytJ9jZ/wxLh7A7WhsrmKLI9/XuJ6d79i2OhGmS3dqkfw==
+  dependencies:
+    "@babel/runtime" "^7"
+    "@instructure/console" "^6.9.0"
+    "@instructure/debounce" "^6.9.0"
+    "@instructure/ui-a11y" "^6.9.0"
+    "@instructure/ui-buttons" "^6.9.0"
+    "@instructure/ui-dom-utils" "^6.9.0"
+    "@instructure/ui-elements" "^6.9.0"
+    "@instructure/ui-form-field" "^6.9.0"
+    "@instructure/ui-i18n" "^6.9.0"
+    "@instructure/ui-icons" "^6.9.0"
+    "@instructure/ui-layout" "^6.9.0"
+    "@instructure/ui-number-input" "^6.9.0"
+    "@instructure/ui-overlays" "^6.9.0"
+    "@instructure/ui-prop-types" "^6.9.0"
+    "@instructure/ui-react-utils" "^6.9.0"
+    "@instructure/ui-svg-images" "^6.9.0"
+    "@instructure/ui-testable" "^6.9.0"
+    "@instructure/ui-text-input" "^6.9.0"
+    "@instructure/ui-themeable" "^6.9.0"
+    "@instructure/ui-utils" "^6.9.0"
+    "@instructure/uid" "^6.9.0"
+    classnames "^2"
+    deep-equal "^1.0.1"
+    keycode "^2"
+    prop-types "^15"
+
 "@instructure/ui-i18n@^6.9.0":
   version "6.9.0"
   resolved "https://registry.yarnpkg.com/@instructure/ui-i18n/-/ui-i18n-6.9.0.tgz#0575379fc1615d9eee4d221a172d1d058aa8288c"
@@ -920,6 +968,23 @@
     "@instructure/ui-testable" "^6.9.0"
     "@instructure/ui-themeable" "^6.9.0"
     "@instructure/ui-utils" "^6.9.0"
+    prop-types "^15"
+
+"@instructure/ui-number-input@^6.9.0":
+  version "6.9.0"
+  resolved "https://registry.yarnpkg.com/@instructure/ui-number-input/-/ui-number-input-6.9.0.tgz#ef87e831cdeebff98148e21376f294c147677fa3"
+  integrity sha512-nLqC5O1Tk1cydRWyha1GQCquheHDzUZuDudGzo8549mQvS456qyrKDSrC7E3X67fv9VNuoBjp7VQHIoGZBM9xQ==
+  dependencies:
+    "@babel/runtime" "^7"
+    "@instructure/ui-form-field" "^6.9.0"
+    "@instructure/ui-icons" "^6.9.0"
+    "@instructure/ui-react-utils" "^6.9.0"
+    "@instructure/ui-testable" "^6.9.0"
+    "@instructure/ui-themeable" "^6.9.0"
+    "@instructure/ui-utils" "^6.9.0"
+    "@instructure/uid" "^6.9.0"
+    classnames "^2"
+    keycode "^2"
     prop-types "^15"
 
 "@instructure/ui-overlays@^6.9.0":
@@ -1030,6 +1095,26 @@
   integrity sha512-MZ8RlifyjOpytYMqfcw5bZkpGnRv9YfKqaC28bPlk0KZ8/5znKnH56wNhZwaQqsGrPZCqi/Zj7TWtfZLYpPQag==
   dependencies:
     "@instructure/ui-decorator" "^6.9.0"
+
+"@instructure/ui-text-input@^6.9.0":
+  version "6.9.0"
+  resolved "https://registry.yarnpkg.com/@instructure/ui-text-input/-/ui-text-input-6.9.0.tgz#073fa0aa8ecb99c0409b1f4129fc8e2a0aae6916"
+  integrity sha512-ryHjsWdNSDJYbnfLgGtsc92V5DUCrDl7bsn82YoF5ik80gE9hv72XtjpIQuO9qNphqNUyzPgJLr4IKW2/DkLWQ==
+  dependencies:
+    "@babel/runtime" "^7"
+    "@instructure/ui-dom-utils" "^6.9.0"
+    "@instructure/ui-form-field" "^6.9.0"
+    "@instructure/ui-icons" "^6.9.0"
+    "@instructure/ui-layout" "^6.9.0"
+    "@instructure/ui-prop-types" "^6.9.0"
+    "@instructure/ui-react-utils" "^6.9.0"
+    "@instructure/ui-testable" "^6.9.0"
+    "@instructure/ui-themeable" "^6.9.0"
+    "@instructure/ui-utils" "^6.9.0"
+    "@instructure/uid" "^6.9.0"
+    classnames "^2"
+    prop-types "^15"
+    react "^15 || ^16"
 
 "@instructure/ui-themeable@^6.9.0":
   version "6.9.0"
@@ -4717,6 +4802,15 @@ react-quill@^1.3.3:
     prop-types "^15.5.10"
     quill "^1.2.6"
     react-dom-factories "^1.0.0"
+
+"react@^15 || ^16":
+  version "16.9.0"
+  resolved "https://registry.yarnpkg.com/react/-/react-16.9.0.tgz#40ba2f9af13bc1a38d75dbf2f4359a5185c4f7aa"
+  integrity sha512-+7LQnFBwkiw+BobzOF6N//BdoNw0ouwmSJTEm9cglOOmsg/TMiFHZLe2sEoN5M7LgJTj9oHH0gxklfnQe66S1w==
+  dependencies:
+    loose-envify "^1.1.0"
+    object-assign "^4.1.1"
+    prop-types "^15.6.2"
 
 react@^16.5.2, react@^16.8.6:
   version "16.8.6"

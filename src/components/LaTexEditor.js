@@ -34,6 +34,12 @@ export default class LaTexEditor extends React.Component {
             // const text = mathField.text()  // fetch math text
             // console.log('latex changed:', latex)
             this.setState({ latex })
+            if(this.state.latex) {
+              this.props.enableLatexEditor();
+            }
+            else {
+              this.props.disableLatexEditor();
+            }
           }}
           mathquillDidMount={el => {
             this.mathQuillEl = el

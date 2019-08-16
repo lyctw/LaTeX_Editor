@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import LaTexEditor from './LaTexEditor'
+import LaTexPreviewer from './LaTexPreviewer'
 import ReactQuill from 'react-quill'
 import CustomToolbar from './CustomToolbar'
 import '@instructure/canvas-theme'
@@ -7,7 +8,7 @@ import { Modal } from '@instructure/ui-overlays/lib/Modal'
 import { Button, CloseButton } from '@instructure/ui-buttons'
 import { Heading } from '@instructure/ui-elements/lib/Heading'
 import { Tabs } from '@instructure/ui-tabs'
-import { Text } from '@instructure/ui-elements'
+// import { Text } from '@instructure/ui-elements'
 import 'react-quill/dist/quill.snow.css'
 
 
@@ -17,7 +18,9 @@ class RichEditor extends Component {
     this.state = {
       content: '',
       open: false,
-      selectedIndex: 0
+      selectedIndex: 0,
+      useLaTexEditor: false,
+      useLaTexPreviewer: false
     }
   }
 
@@ -28,10 +31,16 @@ class RichEditor extends Component {
     })
   };
 
-  handleFormSubmit = e => {
-    e.preventDefault()
-    console.log('form submitted')
-    this.setState(state => ({ open: false }))
+  handleInsert = (latex) => {
+    const imgTag = (latex) ? `<img src="https://latex.codecogs.com/svg.latex?${latex}">` : '';
+    this.setState((prevState) => {
+      return {
+        open: false, 
+        useLaTexEditor: false,
+        useLaTexPreviewer: false,
+        content: `${prevState.content} ${imgTag}`
+      }
+    })
   }
 
   renderMathModel() {
@@ -61,17 +70,6 @@ class RichEditor extends Component {
             <Heading>Math Editor</Heading>
           </Modal.Header>
           <Modal.Body padding="small">
-              {/* <LaTexEditor 
-                handleInsert={(latex) => {
-                  const imgTag = (latex) ? `<img src="https://latex.codecogs.com/svg.latex?${latex}">` : '';
-                  this.setState((prevState) => {
-                    return {
-                      open: false, 
-                      content: `${prevState.content} ${imgTag}`
-                    }
-                  })
-                }}
-              /> */}
               <Tabs
                 margin="auto"
                 padding="medium"
@@ -83,18 +81,28 @@ class RichEditor extends Component {
               >
                 <Tabs.Panel 
                   id="tabA"
-                  renderTitle="Tab A" 
+                  renderTitle="Edit Mode" 
                   // padding="large" 
-                  selected={this.state.selectedIndex === 0}
+                  isSelected={this.state.selectedIndex === 0}
+                  isDisabled={false}
                 >
-                  aaa
+                  <LaTexEditor 
+                    handleInsert={this.handleInsert}
+                    enableLatexEditor={() => {this.setState({useLaTexEditor: true})}}
+                    disableLatexEditor={() => {this.setState({useLaTexEditor: false})}}
+                  /> 
                 </Tabs.Panel>
                 <Tabs.Panel 
                   id="tabB" 
-                  renderTitle="Tab B" 
-                  selected={this.state.selectedIndex === 1}
+                  renderTitle="Preview Mode" 
+                  isSelected={this.state.selectedIndex === 1}
+                  isDisabled={false}
                 >
-                  123
+                  <LaTexPreviewer 
+                    handleInsert={this.handleInsert}
+                    enableLatexPreviewer={() => {this.setState({useLaTexPreviewer: true})}}
+                    disableLatexPreviewer={() => {this.setState({useLaTexPreviewer: false})}}
+                  />
                 </Tabs.Panel>
               </Tabs>
           </Modal.Body>
