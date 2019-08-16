@@ -6,6 +6,8 @@ import '@instructure/canvas-theme'
 import { Modal } from '@instructure/ui-overlays/lib/Modal'
 import { Button, CloseButton } from '@instructure/ui-buttons'
 import { Heading } from '@instructure/ui-elements/lib/Heading'
+import { Tabs } from '@instructure/ui-tabs'
+import { Text } from '@instructure/ui-elements'
 import 'react-quill/dist/quill.snow.css'
 
 
@@ -14,7 +16,8 @@ class RichEditor extends Component {
     super(props)
     this.state = {
       content: '',
-      open: false // modal open 
+      open: false,
+      selectedIndex: 0
     }
   }
 
@@ -31,19 +34,6 @@ class RichEditor extends Component {
     this.setState(state => ({ open: false }))
   }
 
-  renderCloseButton () {
-    return (
-      <CloseButton
-        placement="end"
-        offset="medium"
-        variant="icon"
-        onClick={this.handleButtonClick}
-      >
-        Close
-      </CloseButton>
-    )
-  }
-
   renderMathModel() {
     return (
       <div style={{ padding: '0 0 11rem 0', margin: '0 auto' }}>
@@ -55,16 +45,23 @@ class RichEditor extends Component {
           open={this.state.open}
           onDismiss={() => { this.setState({ open: false }) }}
           onSubmit={this.handleFormSubmit}
-          size="auto"
+          size="large"
           label="Modal Dialog: Hello World"
           shouldCloseOnDocumentClick
         >
-          <Modal.Header>
-            {this.renderCloseButton()}
-            <Heading>MathEditor</Heading>
+          <Modal.Header padding="small">
+            <CloseButton
+              placement="end"
+              offset="medium"
+              variant="icon"
+              onClick={this.handleButtonClick}
+            >
+              Close
+            </CloseButton>
+            <Heading>Math Editor</Heading>
           </Modal.Header>
-          <Modal.Body>
-              <LaTexEditor 
+          <Modal.Body padding="small">
+              {/* <LaTexEditor 
                 handleInsert={(latex) => {
                   const imgTag = (latex) ? `<img src="https://latex.codecogs.com/svg.latex?${latex}">` : '';
                   this.setState((prevState) => {
@@ -74,7 +71,32 @@ class RichEditor extends Component {
                     }
                   })
                 }}
-              />
+              /> */}
+              <Tabs
+                margin="auto"
+                padding="medium"
+                onRequestTabChange={(event, { index, id }) => {
+                  this.setState({
+                    selectedIndex: index
+                  })
+                }}
+              >
+                <Tabs.Panel 
+                  id="tabA"
+                  renderTitle="Tab A" 
+                  // padding="large" 
+                  selected={this.state.selectedIndex === 0}
+                >
+                  aaa
+                </Tabs.Panel>
+                <Tabs.Panel 
+                  id="tabB" 
+                  renderTitle="Tab B" 
+                  selected={this.state.selectedIndex === 1}
+                >
+                  123
+                </Tabs.Panel>
+              </Tabs>
           </Modal.Body>
           {/* <Modal.Footer>
             <Button onClick={this.handleButtonClick}>Close</Button>&nbsp;
