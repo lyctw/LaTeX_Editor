@@ -61,12 +61,12 @@ class RichEditor extends Component {
         >
           <Modal.Header>
             {this.renderCloseButton()}
-            <Heading>Hello World</Heading>
+            <Heading>MathEditor</Heading>
           </Modal.Header>
           <Modal.Body>
               <LaTexEditor 
                 handleInsert={(latex) => {
-                  const imgTag = `<img src="https://latex.codecogs.com/svg.latex?${latex}">`;
+                  const imgTag = (latex) ? `<img src="https://latex.codecogs.com/svg.latex?${latex}">` : '';
                   this.setState((prevState) => {
                     return {
                       open: false, 

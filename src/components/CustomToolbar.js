@@ -32,7 +32,7 @@ export default class CustomToolbar extends React.Component {
                     <select className="ql-align"></select>      
                 
                     <button className="ql-link"></button>
-                    <button className="ql-image"></button>
+                    {/* <button className="ql-image"></button> */}
                     {/* <button className="ql-video"></button> */}
         
                     <button className="math" onClick={() => {

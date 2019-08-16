@@ -12,7 +12,7 @@ export default class LaTexEditor extends React.Component {
     super(props)
 
     this.state = {
-      latex: 'y=x^2'
+      latex: ''
     }
 
     this.mathQuillEl = null
@@ -25,13 +25,14 @@ export default class LaTexEditor extends React.Component {
   render() {
     return (
       <div>
+        {'Input LaTeX: '}
         <MathQuill
           className="mathquill-field"
           latex={this.state.latex}
           onChange={mathField => {
             const latex = mathField.latex()
             // const text = mathField.text()  // fetch math text
-            console.log('latex changed:', latex)
+            // console.log('latex changed:', latex)
             this.setState({ latex })
           }}
           mathquillDidMount={el => {
@@ -46,7 +47,7 @@ export default class LaTexEditor extends React.Component {
                 this.mathQuillEl.latex('')
                 this.props.handleInsert(currentTex);
             }}
-        >Insert LaTeX</Button> 
+        >Add</Button> 
         
       </div>
     )
