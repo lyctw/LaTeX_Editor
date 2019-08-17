@@ -29,8 +29,6 @@ export default class LaTexPreviewer extends React.Component {
     render() {
       return (
         <div>
-          {/* <p>這個元件還在施工中 TODO: 爬下svg圖，完成shortcut按鈕，之後這個元件要能從mathQuill吃latex語法進來</p> */}
-          {/* <p style={{color: "cadetblue"}}>DEMO 2: 輸入latex語法，動態預覽，下面有欄位可打開讓使用者選擇LaTeX語法</p> */}
           {/* <img src={"https://i.imgur.com/Nbvxf0C.png"} /> */}
 
           <Shortcut handleAppendTex={this.handleAppendTex}/>
@@ -38,7 +36,8 @@ export default class LaTexPreviewer extends React.Component {
           <TextArea 
             value={this.state.latex} 
             onChange={this.handleLatexChange}
-            placeholder="Input LaTeX"
+            placeholder="E = mc^2"
+            label="Input LaTeX"
           />
           <div id="present-tex">
               <p>Preview:</p>
