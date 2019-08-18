@@ -19,13 +19,14 @@ class RichEditor extends Component {
       content: '',
       open: false,
       selectedIndex: 0,
+      // if use LaTexEditor, LaTexPreviewer should be disable and vise versa
       useLaTexEditor: false,
       useLaTexPreviewer: false
     }
   }
 
   handleButtonClick = () => {
-    this.setState(function (state) {
+    this.setState((state) => {
       return { open: !state.open }
     })
   };
@@ -45,9 +46,6 @@ class RichEditor extends Component {
   renderMathModel() {
     return (
       <div style={{ padding: '0 0 0 0', margin: '0 auto' }}>
-        {/* <Button onClick={this.handleButtonClick}>
-          {this.state.open ? 'Close' : 'Open'} the Modal
-        </Button> */}
         <Modal
           as="form"
           open={this.state.open}
