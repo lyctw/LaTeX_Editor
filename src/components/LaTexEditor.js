@@ -1,6 +1,8 @@
 import React from 'react';
 import MathQuill, { addStyles as addMathquillStyles } from 'react-mathquill'
- 
+import '@instructure/canvas-theme'
+import { Button } from '@instructure/ui-buttons'
+
 addMathquillStyles()
 
 
@@ -23,30 +25,37 @@ export default class LaTexEditor extends React.Component {
   render() {
     return (
       <div>
-        {/* <p style={{color: "cadetblue"}}>DEMO 1: 和word輸入方程式相同，輸入LaTeX語法按空白鍵會自動渲染，並可以在編輯其中的變數，使用範例如下</p>
-        <img src={"https://cloud.githubusercontent.com/assets/225809/15163580/1bc048c4-16be-11e6-98a6-de467d00cff1.gif"} width="150px"/><br/> */}
-        Math field:{' '}
+        {'Input LaTeX: '}
         <MathQuill
           className="mathquill-field"
+          style={{ width: '125px' }}
           latex={this.state.latex}
           onChange={mathField => {
             const latex = mathField.latex()
             // const text = mathField.text()  // fetch math text
-            console.log('latex changed:', latex)
+            // console.log('latex changed:', latex)
             this.setState({ latex })
+            if(this.state.latex) {
+              this.props.enableLatexEditor();
+            }
+            else {
+              this.props.disableLatexEditor();
+            }
           }}
           mathquillDidMount={el => {
             this.mathQuillEl = el
           }}
         />
-        <br/>
-        <button 
+        <br/><br/>
+        
+        <Button 
             onClick={() => { 
                 const currentTex = this.mathQuillEl.latex();
                 this.mathQuillEl.latex('')
                 this.props.handleInsert(currentTex);
             }}
-        >Insert LaTeX</button> 
+        >Add</Button> 
+        
       </div>
     )
   }
