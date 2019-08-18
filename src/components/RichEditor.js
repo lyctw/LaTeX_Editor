@@ -24,7 +24,6 @@ class RichEditor extends Component {
     }
   }
 
-  // 1.BEGIN
   handleButtonClick = () => {
     this.setState(function (state) {
       return { open: !state.open }
@@ -114,7 +113,6 @@ class RichEditor extends Component {
       </div>
     )
   }
-  // 1.END
 
   render() {
 
@@ -141,6 +139,7 @@ class RichEditor extends Component {
             this.setState({content})
             console.log(this.state)
             // console.log(editor.getHTML())
+            this.props.getDocument(this.state.content)
           }}
           value={this.state.content}
         />

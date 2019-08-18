@@ -8,7 +8,7 @@ const App = () => {
 
 
   return (
-      <>
+      <div>
       
         <RichEditor 
           // bounds={this.props.bounds}
@@ -16,9 +16,11 @@ const App = () => {
           placeholder={'請在此輸入您的回覆'}
           // value={}
           // onChange={(val) => {setContent(val)}}
+          getDocument={(html) => {setContent(html)}}
         />
+        <p>END</p>
 
-      </>
+      </div>
   )
 };
 
