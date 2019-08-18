@@ -44,6 +44,7 @@ export default class LaTexPreviewer extends React.Component {
               <img src={String.raw`https://latex.codecogs.com/svg.latex?\LARGE ${this.state.latex}`} />
           </div>
 
+          <br/>
           <Button 
               onClick={() => { 
                   this.props.handleInsert(this.state.latex);

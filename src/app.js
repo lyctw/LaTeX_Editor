@@ -18,7 +18,6 @@ const App = () => {
           // onChange={(val) => {setContent(val)}}
           getDocument={(html) => {setContent(html)}}
         />
-        <p>END</p>
 
       </div>
   )

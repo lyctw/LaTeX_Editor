@@ -44,7 +44,7 @@ class RichEditor extends Component {
 
   renderMathModel() {
     return (
-      <div style={{ padding: '0 0 11rem 0', margin: '0 auto' }}>
+      <div style={{ padding: '0 0 0 0', margin: '0 auto' }}>
         {/* <Button onClick={this.handleButtonClick}>
           {this.state.open ? 'Close' : 'Open'} the Modal
         </Button> */}

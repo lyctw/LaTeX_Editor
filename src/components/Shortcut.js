@@ -9,20 +9,20 @@ import pm_svg from '../img/set1/pm.svg'
 
 const Shortcut = ({handleAppendTex}) => {
     return (
-        <>
+        <div>
             <details><summary>Shortcut</summary>
 
-                {/* <button onClick={() => {handleAppendTex(' + ')}}><img src={add_svg} /></button> */}
-                {/* <button onClick={() => {handleAppendTex(' - ')}}><img src={minus_svg} /></button> */}
+                {/* <button onClick={(e) => {e.preventDefault();handleAppendTex(' + ')}}><img src={add_svg} /></button> */}
+                {/* <button onClick={(e) => {e.preventDefault();handleAppendTex(' - ')}}><img src={minus_svg} /></button> */}
                 <button onClick={(e) => {e.preventDefault(); handleAppendTex(String.raw` \times `)}}><img src={times_svg} /></button>
-                <button onClick={() => {handleAppendTex(String.raw` \div `)}}><img src={div_svg} /></button>
-                <button onClick={() => {handleAppendTex(String.raw` \amalg `)}}><img src={amalg_svg} /></button>
-                <button onClick={() => {handleAppendTex(String.raw` \star `)}}><img src={star_svg} /></button>
-                <button onClick={() => {handleAppendTex(String.raw` \pm `)}}><img src={pm_svg} /></button>
+                <button onClick={(e) => {e.preventDefault();handleAppendTex(String.raw` \div `)}}><img src={div_svg} /></button>
+                <button onClick={(e) => {e.preventDefault();handleAppendTex(String.raw` \amalg `)}}><img src={amalg_svg} /></button>
+                <button onClick={(e) => {e.preventDefault();handleAppendTex(String.raw` \star `)}}><img src={star_svg} /></button>
+                <button onClick={(e) => {e.preventDefault();handleAppendTex(String.raw` \pm `)}}><img src={pm_svg} /></button>
                 
             
             </details>
-        </>
+        </div>
     );
 }
 
