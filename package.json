@@ -5,7 +5,8 @@
   "scripts": {
     "build:dev": "webpack",
     "build:prod": "webpack -p",
-    "dev-server": "webpack-dev-server"
+    "dev-server": "webpack-dev-server",
+    "test": "jest"
   },
   "keywords": [
     "mathjax"
@@ -20,6 +21,7 @@
     "@instructure/ui-forms": "^6.9.0",
     "@instructure/ui-overlays": "^6.9.0",
     "@instructure/ui-tabs": "^6.9.0",
+    "core-js": "2",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
     "react-mathquill": "^0.1.9",
@@ -27,14 +29,18 @@
     "url-loader": "^2.1.0"
   },
   "devDependencies": {
+    "@babel/cli": "^7.0.0",
     "@babel/core": "^7.5.5",
     "@babel/plugin-proposal-class-properties": "^7.5.5",
     "@babel/plugin-proposal-object-rest-spread": "^7.5.5",
     "@babel/preset-env": "^7.5.5",
     "@babel/preset-react": "^7.0.0",
+    "babel-core": "7.0.0-bridge.0",
+    "babel-jest": "^23.4.2",
     "babel-loader": "^8.0.6",
     "css-loader": "^3.1.0",
     "file-loader": "^4.1.0",
+    "jest": "^24.9.0",
     "react-test-renderer": "16.0.0",
     "request": "^2.88.0",
     "script-loader": "^0.7.2",

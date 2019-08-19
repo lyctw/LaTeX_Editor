@@ -5,7 +5,7 @@
       {
         "useBuiltIns": "entry"
       }
-  ],
+    ],
     "@babel/preset-react"
   ],
   "plugins": [

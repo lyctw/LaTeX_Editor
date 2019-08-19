@@ -2,8 +2,9 @@
 # LaTeX Editor React Component
 
 [TODO]
-把Editor、Previewer，當成不同的功能，都能insert `<img>` with latex
-TEST
+~~把Editor、Previewer，當成不同的功能，都能insert `<img>` with latex
+TEST~~
+Testing
 
 ## Directory
 
