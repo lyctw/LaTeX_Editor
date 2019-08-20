@@ -4,7 +4,7 @@
  *   - Example of all toolbar options: https://github.com/quilljs/quill/blob/develop/docs/_includes/standalone/full.html
  */
 
-import React from 'react';
+import React from 'react'
 import fx_svg from '../img/fx.svg'
 
 
