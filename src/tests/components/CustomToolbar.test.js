@@ -4,8 +4,8 @@ import CustomToolbar from '../../components/CustomToolbar'
 
 test('should shallow render CustomToolbar correctly', () => {
     const renderer = new ShallowRenderer();
-    renderer.render(<CustomToolbar />)
+    renderer.render(<CustomToolbar />);
     expect(renderer.getRenderOutput()).toMatchSnapshot();
-    console.log(renderer.getRenderOutput())
+    console.log(renderer.getRenderOutput());
 })
 
