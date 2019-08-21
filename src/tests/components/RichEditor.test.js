@@ -30,6 +30,7 @@ test('should have a math button', () => {
 
 
 // // mount quill problem: see https://github.com/zenoamaro/react-quill/issues/434
+// //                          https://stackoverflow.com/questions/48809753/testing-mutationobserver-with-jest
 // test('should state.open is true if math button is clicked', () => {
 //     const wrapper = mount(<RichEditor placeholder={'請在此輸入您的回覆'} getDocument={(html) => {jest.fn()}}/>);
 //     wrapper.find('button.math').simulate('click', );
