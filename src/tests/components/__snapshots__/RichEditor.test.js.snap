@@ -1,0 +1,133 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render RichEditor 1`] = `
+<div>
+  <CustomToolbar
+    onToggleModal={[Function]}
+  />
+  <Quill
+    bounds="#right-nav"
+    id="quill"
+    modules={
+      Object {
+        "toolbar": Object {
+          "container": "#toolbar",
+        },
+      }
+    }
+    onChange={[Function]}
+    preserveWhitespace={true}
+    theme="snow"
+    value=""
+  />
+  <div
+    style={
+      Object {
+        "margin": "0 auto",
+        "padding": "0 0 0 0",
+      }
+    }
+  >
+    <Modal
+      as="form"
+      constrain="window"
+      contentRef={[Function]}
+      defaultFocusElement={null}
+      insertAt="bottom"
+      label="Modal Dialog: Hello World"
+      liveRegion={null}
+      mountNode={null}
+      onClose={[Function]}
+      onDismiss={[Function]}
+      onEnter={[Function]}
+      onEntered={[Function]}
+      onEntering={[Function]}
+      onExit={[Function]}
+      onExited={[Function]}
+      onExiting={[Function]}
+      onOpen={[Function]}
+      open={false}
+      overflow="scroll"
+      shouldCloseOnDocumentClick={true}
+      shouldReturnFocus={true}
+      size="large"
+      transition="fade"
+      variant="default"
+    >
+      <ModalHeader
+        padding="small"
+        variant="default"
+      >
+        <CloseButton
+          buttonRef={[Function]}
+          margin="0"
+          offset="medium"
+          onClick={[Function]}
+          placement="end"
+          size="small"
+          variant="icon"
+        >
+          Close
+        </CloseButton>
+        <Heading
+          border="none"
+          color="inherit"
+          ellipsis={false}
+          level="h2"
+        >
+          Math Editor
+        </Heading>
+      </ModalHeader>
+      <ModalBody
+        as="div"
+        padding="small"
+        variant="default"
+      >
+        <Tabs
+          elementRef={[Function]}
+          margin="auto"
+          onRequestTabChange={[Function]}
+          padding="medium"
+          shouldFocusOnRender={false}
+          variant="default"
+        >
+          <Panel
+            elementRef={[Function]}
+            id="tabA"
+            isDisabled={false}
+            isSelected={true}
+            labelledBy={null}
+            padding="small"
+            renderTitle="Edit Mode"
+            textAlign="start"
+            variant="default"
+          >
+            <LaTexEditor
+              disableLatexEditor={[Function]}
+              enableLatexEditor={[Function]}
+              handleInsert={[Function]}
+            />
+          </Panel>
+          <Panel
+            elementRef={[Function]}
+            id="tabB"
+            isDisabled={false}
+            isSelected={false}
+            labelledBy={null}
+            padding="small"
+            renderTitle="Preview Mode"
+            textAlign="start"
+            variant="default"
+          >
+            <LaTexPreviewer
+              disableLatexPreviewer={[Function]}
+              enableLatexPreviewer={[Function]}
+              handleInsert={[Function]}
+            />
+          </Panel>
+        </Tabs>
+      </ModalBody>
+    </Modal>
+  </div>
+</div>
+`;

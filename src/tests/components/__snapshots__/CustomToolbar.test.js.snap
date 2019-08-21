@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`should shallow render CustomToolbar correctly 1`] = `
+exports[`should render CustomToolbar 1`] = `
 <div
   id="toolbar"
 >

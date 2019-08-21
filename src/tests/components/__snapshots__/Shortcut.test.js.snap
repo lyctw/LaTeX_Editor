@@ -1,0 +1,46 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render Shortcut 1`] = `
+<div>
+  <details>
+    <summary>
+      Shortcut
+    </summary>
+    <button
+      onClick={[Function]}
+    >
+      <img
+        src="test-file-stub"
+      />
+    </button>
+    <button
+      onClick={[Function]}
+    >
+      <img
+        src="test-file-stub"
+      />
+    </button>
+    <button
+      onClick={[Function]}
+    >
+      <img
+        src="test-file-stub"
+      />
+    </button>
+    <button
+      onClick={[Function]}
+    >
+      <img
+        src="test-file-stub"
+      />
+    </button>
+    <button
+      onClick={[Function]}
+    >
+      <img
+        src="test-file-stub"
+      />
+    </button>
+  </details>
+</div>
+`;

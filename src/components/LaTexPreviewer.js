@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import Shortcut from './Shortcut'
 import { Button } from '@instructure/ui-buttons'
 import { TextArea } from '@instructure/ui-forms'
