@@ -17,31 +17,68 @@ class RichEditor extends Component {
     super(props)
     this.state = {
       content: '',
+      cursorPosition: 0,
       open: false,
       selectedIndex: 0,
       // if use LaTexEditor, LaTexPreviewer should be disable and vise versa
       useLaTexEditor: false,
       useLaTexPreviewer: false
     }
+
+    // ref:　https://github.com/zenoamaro/react-quill#methods
+    this.quillRef = null;      // Quill instance
+    this.reactQuillRef = null; // ReactQuill component
   }
+
+  componentDidMount() {
+    this.attachQuillRefs()
+  }
+  
+  componentDidUpdate() {
+    this.attachQuillRefs()
+  }
+  
+  attachQuillRefs = () => {
+    if (typeof this.reactQuillRef.getEditor !== 'function') return;
+    this.quillRef = this.reactQuillRef.getEditor();
+  }
+
+  // updateCursorPosition = () => {
+  //   this.state.cursorPosition = (this.quillRef.getSelection()) ? this.quillRef.getSelection().index : this.state.cursorPosition;
+  // }
+  
+  handleInsert = (latex) => {
+    const imgTag = (latex) ? `<img src="https://latex.codecogs.com/svg.latex?${latex}">` : '';
+    // var range = this.quillRef.getSelection();
+    // let position = range ? range.index : 0;
+    this.quillRef.clipboard.dangerouslyPasteHTML(this.state.cursorPosition, imgTag)
+    // this.setState((prevState) => ({cursorPosition: prevState.cursorPosition + 1});
+    this.setState((prevState) => ({
+        cursorPosition: prevState.cursorPosition + 1,
+        open: false, 
+        useLaTexEditor: false,
+        useLaTexPreviewer: false
+    }))
+    this.quillRef.setSelection(4); // doesn't work !?!?
+  }
+
+  // handleInsert = (latex) => {
+  //   const imgTag = (latex) ? `<img src="https://latex.codecogs.com/svg.latex?${latex}">` : '';
+  //   this.setState((prevState) => {
+  //     return {
+  //       open: false, 
+  //       useLaTexEditor: false,
+  //       useLaTexPreviewer: false,
+  //       content: `${prevState.content} ${imgTag}`
+  //     }
+  //   })
+  // }
 
   handleButtonClick = () => {
     this.setState((state) => {
       return { open: !state.open }
     })
   };
-
-  handleInsert = (latex) => {
-    const imgTag = (latex) ? `<img src="https://latex.codecogs.com/svg.latex?${latex}">` : '';
-    this.setState((prevState) => {
-      return {
-        open: false, 
-        useLaTexEditor: false,
-        useLaTexPreviewer: false,
-        content: `${prevState.content} ${imgTag}`
-      }
-    })
-  }
 
   renderMathModel() {
     return (
@@ -126,6 +163,7 @@ class RichEditor extends Component {
           onToggleModal={this.handleButtonClick}
         />
         <ReactQuill
+          ref={(el) => { this.reactQuillRef = el }}
           id="quill"
           theme="snow"
           modules={customModules}
@@ -134,10 +172,19 @@ class RichEditor extends Component {
           placeholder={this.props.placeholder}
           preserveWhitespace
           onChange={(content, delta, source, editor) => {
-            this.setState({content})
-            console.log(this.state)
-            // console.log(editor.getHTML())
-            this.props.getDocument(this.state.content)
+            // Need to store cursorPosition bacause editor will blur when Modal open 
+            // and this.quillRef.getSelection() will be null
+            const cursorPosition = (this.quillRef.getSelection()) ? this.quillRef.getSelection().index : this.state.cursorPosition;
+            this.setState({
+              content,
+              cursorPosition
+            });
+            console.log(this.state.content);
+            this.props.getDocument(this.state.content);
+          }}
+          onChangeSelection={() => {
+            const cursorPosition = (this.quillRef.getSelection()) ? this.quillRef.getSelection().index : this.state.cursorPosition;
+            this.setState({cursorPosition});
           }}
           value={this.state.content}
         />
