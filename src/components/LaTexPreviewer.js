@@ -12,14 +12,11 @@ export default class LaTexPreviewer extends React.Component {
       }
     }
   
-    handleLatexChange = event => {
-      this.setState({latex: event.target.value});
-      if(this.state.latex) {
-        this.props.enableLatexPreviewer();
-      }
-      else {
-        this.props.disableLatexPreviewer();
-      }
+    handleChange = (event) => {
+      this.setState({
+        latex: event.target.value
+      });
+      this.props.setPreviewerActivation(event.target.value);
     }
 
     handleAppendTex = (_tex) => {
@@ -35,7 +32,7 @@ export default class LaTexPreviewer extends React.Component {
           <br/>
           <TextArea 
             value={this.state.latex} 
-            onChange={this.handleLatexChange}
+            onChange={this.handleChange}
             placeholder="E = mc^2"
             label="Input LaTeX"
           />

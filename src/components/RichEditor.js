@@ -87,7 +87,7 @@ class RichEditor extends Component {
           onDismiss={() => { this.setState({ open: false }) }}
           onSubmit={this.handleFormSubmit}
           size="large"
-          label="Modal Dialog: Hello World"
+          label="Modal Dialog"
           shouldCloseOnDocumentClick
         >
           <Modal.Header padding="small">
@@ -116,24 +116,46 @@ class RichEditor extends Component {
                   renderTitle="Edit Mode" 
                   // padding="large" 
                   isSelected={this.state.selectedIndex === 0}
-                  isDisabled={false}
+                  isDisabled={this.state.useLaTexPreviewer}
                 >
                   <LaTexEditor 
                     handleInsert={this.handleInsert}
-                    enableLatexEditor={() => {this.setState({useLaTexEditor: true})}}
-                    disableLatexEditor={() => {this.setState({useLaTexEditor: false})}}
+                    setEditorActivation={(latex) => {
+                      if(latex) {
+                        this.setState({
+                          useLaTexEditor: true,
+                          useLaTexPreviewer: false
+                        });
+                      } else {
+                        this.setState({ 
+                          useLaTexEditor: false,
+                          useLaTexPreviewer: false
+                        });
+                      }
+                    }}
                   /> 
                 </Tabs.Panel>
                 <Tabs.Panel 
                   id="tabB" 
                   renderTitle="Preview Mode" 
                   isSelected={this.state.selectedIndex === 1}
-                  isDisabled={false}
+                  isDisabled={this.state.useLaTexEditor}
                 >
                   <LaTexPreviewer 
                     handleInsert={this.handleInsert}
-                    enableLatexPreviewer={() => {this.setState({useLaTexPreviewer: true})}}
-                    disableLatexPreviewer={() => {this.setState({useLaTexPreviewer: false})}}
+                    setPreviewerActivation={(latex) => {
+                      if(latex !== '') {
+                        this.setState({
+                          useLaTexEditor: false,
+                          useLaTexPreviewer: true
+                        });
+                      } else {
+                        this.setState({ 
+                          useLaTexEditor: false,
+                          useLaTexPreviewer: false
+                        });
+                      }
+                    }}
                   />
                 </Tabs.Panel>
               </Tabs>
