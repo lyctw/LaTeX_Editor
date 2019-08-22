@@ -25,10 +25,10 @@ export default class LaTexEditor extends React.Component {
   render() {
     return (
       <div>
-        {'Input LaTeX: '}
+        <b>Input LaTeX: </b>
         <MathQuill
           className="mathquill-field"
-          style={{ width: '125px' }}
+          style={{ width: '100%' }}
           latex={this.state.latex}
           onChange={mathField => {
             const latex = mathField.latex()

@@ -49,20 +49,18 @@ class RichEditor extends Component {
   
   handleInsert = (latex) => {
     const imgTag = (latex) ? `<img src="https://latex.codecogs.com/svg.latex?${latex}">` : '';
-    // var range = this.quillRef.getSelection();
-    // let position = range ? range.index : 0;
-    this.quillRef.clipboard.dangerouslyPasteHTML(this.state.cursorPosition, imgTag)
-    // this.setState((prevState) => ({cursorPosition: prevState.cursorPosition + 1});
-    this.setState((prevState) => ({
-        cursorPosition: prevState.cursorPosition + 1,
+    this.quillRef.clipboard.dangerouslyPasteHTML(this.state.cursorPosition, imgTag);
+    this.setState({
         open: false, 
         useLaTexEditor: false,
         useLaTexPreviewer: false
-    }))
-    this.quillRef.setSelection(4); // doesn't work !?!?
+    })
+    // console.log(this.quillRef.setSelection)
+    // this.quillRef.setSelection(this.state.cursorPosition); // doesn't work !?!?
+    this.quillRef.blur();
   }
 
-  // handleInsert = (latex) => {
+  // handleAppendImg = (latex) => {
   //   const imgTag = (latex) ? `<img src="https://latex.codecogs.com/svg.latex?${latex}">` : '';
   //   this.setState((prevState) => {
   //     return {
