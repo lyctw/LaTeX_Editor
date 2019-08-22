@@ -1,12 +1,8 @@
-import React, { useState } from 'react';
+import React from 'react';
 import ReactDOM from 'react-dom';
 import RichEditor from './components/RichEditor'
 
 const App = () => {
-
-  let [content, setContent] = useState(''); // html string
-
-
   return (
       <div>
       
@@ -16,7 +12,7 @@ const App = () => {
           placeholder={'請在此輸入您的回覆'}
           // value={}
           // onChange={(val) => {setContent(val)}}
-          getDocument={(html) => {setContent(html)}}
+          // getDocument={(html) => {console.log(html)}}
         />
 
       </div>
