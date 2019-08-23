@@ -1,6 +1,8 @@
 # Symphony-RichEditor 
 
-Customized Quill React component for Symphony module, using [instructure-ui](https://instructure.design).
+Customized Quill React component for Symphony module. Based on Quill.js and MathQuill.
+
+:cat2: [instructure-ui](https://instructure.design) used.
 
 
 
