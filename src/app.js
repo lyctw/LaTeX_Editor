@@ -13,7 +13,7 @@ const App = () => {
           // value={}
           // onChange={(val) => {setContent(val)}}
           onDocumentChange={(html) => {
-            // console.log(html)
+            console.log('doc:' + html)
           }}
         />
 
