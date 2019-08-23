@@ -184,7 +184,7 @@ export default class RichEditor extends Component {
               cursorPosition
             });
             console.log(this.state.content);
-            this.props.onDocumentChange(this.state.content);
+            this.props.onDocumentChange(this.state.content); 
           }}
           onChangeSelection={() => {
             const cursorPosition = (this.quillRef.getSelection()) ? this.quillRef.getSelection().index : this.state.cursorPosition;
