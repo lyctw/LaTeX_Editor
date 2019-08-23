@@ -1,18 +1,16 @@
 {
-  "name": "formulaeditor",
+  "name": "symphony-richeditor",
   "version": "1.0.0",
-  "main": "index.js",
+  "main": "build/index.js",
   "scripts": {
     "build:dev": "webpack",
     "build:prod": "webpack -p",
     "dev-server": "webpack-dev-server"
   },
-  "keywords": [
-    "mathjax"
-  ],
-  "author": "yc lin",
+  "keywords": [],
+  "author": "NTU CTLD it-team",
   "license": "ISC",
-  "description": "",
+  "description": "This is a editor module based on Quill.js and MathQuill which provide a friendly LaTeX input textarea for user in NTU-COOL.",
   "dependencies": {
     "@instructure/canvas-theme": "^6.9.0",
     "@instructure/ui-buttons": "^6.9.0",
