@@ -12,7 +12,7 @@ const App = () => {
           placeholder={'請在此輸入您的回覆'}
           // value={}
           // onChange={(val) => {setContent(val)}}
-          getDocument={(html) => {
+          onDocumentChange={(html) => {
             // console.log(html)
           }}
         />

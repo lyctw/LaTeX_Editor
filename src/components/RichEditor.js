@@ -5,7 +5,7 @@ import ReactQuill from 'react-quill'
 import CustomToolbar from './CustomToolbar'
 import '@instructure/canvas-theme'
 import { Modal } from '@instructure/ui-overlays/lib/Modal'
-import { Button, CloseButton } from '@instructure/ui-buttons'
+import { CloseButton } from '@instructure/ui-buttons'
 import { Heading } from '@instructure/ui-elements/lib/Heading'
 import { Tabs } from '@instructure/ui-tabs'
 // import { Text } from '@instructure/ui-elements'
@@ -42,10 +42,6 @@ export default class RichEditor extends Component {
     if (typeof this.reactQuillRef.getEditor !== 'function') return;
     this.quillRef = this.reactQuillRef.getEditor();
   }
-
-  // updateCursorPosition = () => {
-  //   this.state.cursorPosition = (this.quillRef.getSelection()) ? this.quillRef.getSelection().index : this.state.cursorPosition;
-  // }
   
   handleInsert = (latex) => {
     const imgTag = (latex) ? `<img src="https://latex.codecogs.com/svg.latex?${latex}">` : '';
@@ -59,18 +55,6 @@ export default class RichEditor extends Component {
     // this.quillRef.setSelection(this.state.cursorPosition); // doesn't work !?!?
     this.quillRef.blur();
   }
-
-  // handleAppendImg = (latex) => {
-  //   const imgTag = (latex) ? `<img src="https://latex.codecogs.com/svg.latex?${latex}">` : '';
-  //   this.setState((prevState) => {
-  //     return {
-  //       open: false, 
-  //       useLaTexEditor: false,
-  //       useLaTexPreviewer: false,
-  //       content: `${prevState.content} ${imgTag}`
-  //     }
-  //   })
-  // }
 
   handleButtonClick = () => {
     this.setState((state) => {
@@ -200,7 +184,7 @@ export default class RichEditor extends Component {
               cursorPosition
             });
             console.log(this.state.content);
-            this.props.getDocument(this.state.content);
+            this.props.onDocumentChange(this.state.content);
           }}
           onChangeSelection={() => {
             const cursorPosition = (this.quillRef.getSelection()) ? this.quillRef.getSelection().index : this.state.cursorPosition;
