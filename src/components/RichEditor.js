@@ -50,11 +50,11 @@ class RichEditor extends Component {
   handleInsert = (latex) => {
     const imgTag = (latex) ? `<img src="https://latex.codecogs.com/svg.latex?${latex}">` : '';
     this.quillRef.clipboard.dangerouslyPasteHTML(this.state.cursorPosition, imgTag);
-    this.setState({
+    this.setState((prevState) => ({
         open: false, 
         useLaTexEditor: false,
         useLaTexPreviewer: false
-    })
+    }))
     // console.log(this.quillRef.setSelection)
     // this.quillRef.setSelection(this.state.cursorPosition); // doesn't work !?!?
     this.quillRef.blur();
