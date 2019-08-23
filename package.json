@@ -10,7 +10,7 @@
   "keywords": [],
   "author": "NTU CTLD it-team",
   "license": "ISC",
-  "description": "This is a editor module based on Quill.js and MathQuill which provide a friendly LaTeX input textarea for user in NTU-COOL.",
+  "description": "This is an editor module based on Quill.js and MathQuill which provide a friendly LaTeX input textarea for user in NTU-COOL.",
   "dependencies": {
     "@instructure/canvas-theme": "^6.9.0",
     "@instructure/ui-buttons": "^6.9.0",

@@ -12,7 +12,7 @@ import { Tabs } from '@instructure/ui-tabs'
 import 'react-quill/dist/quill.snow.css'
 
 
-class RichEditor extends Component {
+export default class RichEditor extends Component {
   constructor(props) {
     super(props)
     this.state = {
@@ -215,5 +215,3 @@ class RichEditor extends Component {
     )
   }
 }
-
-export default RichEditor
