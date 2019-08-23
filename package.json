@@ -1,5 +1,5 @@
 {
-  "name": "formulaeditor",
+  "name": "symphony-richeditor",
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
@@ -7,9 +7,6 @@
     "build:prod": "webpack -p",
     "dev-server": "webpack-dev-server"
   },
-  "keywords": [
-    "mathjax"
-  ],
   "author": "yc lin",
   "license": "ISC",
   "description": "",
