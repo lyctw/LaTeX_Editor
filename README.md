@@ -6,12 +6,12 @@ Customized Quill React component for Symphony module, using [instructure-ui](htt
 
 ## Install
 
-npm
+
 ```
 npm i symphony-richeditor --save
 ```
 
-yarn 
+or
 ```
 yarn add symphony-richeditor
 ```
@@ -29,20 +29,27 @@ const RichEditor = require('symphony-richeditor'); // CommonJS
 Use the component
 
 ```js
-return (
+import React from 'react';
+import RichEditor from 'symphony-richeditor';
+
+class App extends React.Component {
+  constructor(props) {
+      super(props);
+  }
+
+  render() {
+    return (
       <div>
-      
         <RichEditor 
-          // bounds={this.props.bounds}
-          // editorRef={this.props.editorRef}
-          placeholder={'請在此輸入您的回覆'}
-          // value={}
-          // onChange={(val) => {setContent(val)}}
+          placeholder={'1d23'}
           onDocumentChange={(html) => {
-            console.log('doc:' + html)
+            console.log(html)
           }}
         />
-
       </div>
-  )
+    );
+  }
+};
+
+ReactDOM.render(<App />, document.getElementById('app'));
 ```
