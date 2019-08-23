@@ -41,7 +41,7 @@ class App extends React.Component {
     return (
       <div>
         <RichEditor 
-          placeholder={'1d23'}
+          placeholder={'Write something'}
           onDocumentChange={(html) => {
             console.log(html)
           }}
