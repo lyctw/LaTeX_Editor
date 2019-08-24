@@ -1,4 +1,4 @@
-# LaTeX Editor React Component
+# Symphony-RichEditor 
 
 > https://www.npmjs.com/package/symphony-richeditor
 
