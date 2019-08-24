@@ -1,15 +1,22 @@
 {
   "name": "symphony-richeditor",
-  "version": "1.0.0",
-  "main": "index.js",
+  "version": "1.1.6",
+  "main": "build/index.js",
   "scripts": {
     "build:dev": "webpack",
     "build:prod": "webpack -p",
     "dev-server": "webpack-dev-server"
   },
-  "author": "yc lin",
+  "keywords": [
+    "react",
+    "react-component",
+    "textarea",
+    "LaTeX",
+    "quill"
+  ],
+  "author": "NTU CTLD it-team",
   "license": "ISC",
-  "description": "",
+  "description": "This is an editor module based on Quill.js and MathQuill which provide a friendly LaTeX input textarea for user in NTU-COOL.",
   "dependencies": {
     "@instructure/canvas-theme": "^6.9.0",
     "@instructure/ui-buttons": "^6.9.0",
