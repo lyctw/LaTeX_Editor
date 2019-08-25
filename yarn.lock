@@ -957,6 +957,29 @@
     classnames "^2"
     prop-types "^15"
 
+"@instructure/ui-menu@^6.9.0":
+  version "6.9.0"
+  resolved "https://registry.yarnpkg.com/@instructure/ui-menu/-/ui-menu-6.9.0.tgz#a97133d8e6eb90f8e8c08c9a73279841fcf55cde"
+  integrity sha512-Cf3AIpfcLZThUp7C/FWMi2ZNt++ftTNNKTFo14MMXLStt6dfJlqVh4AheH8gFgIdNdHO9YbTwT4eS8oNCbFoFQ==
+  dependencies:
+    "@babel/runtime" "^7"
+    "@instructure/console" "^6.9.0"
+    "@instructure/ui-a11y" "^6.9.0"
+    "@instructure/ui-dom-utils" "^6.9.0"
+    "@instructure/ui-elements" "^6.9.0"
+    "@instructure/ui-icons" "^6.9.0"
+    "@instructure/ui-layout" "^6.9.0"
+    "@instructure/ui-overlays" "^6.9.0"
+    "@instructure/ui-prop-types" "^6.9.0"
+    "@instructure/ui-react-utils" "^6.9.0"
+    "@instructure/ui-testable" "^6.9.0"
+    "@instructure/ui-themeable" "^6.9.0"
+    "@instructure/ui-utils" "^6.9.0"
+    "@instructure/uid" "^6.9.0"
+    classnames "^2"
+    keycode "^2"
+    prop-types "^15"
+
 "@instructure/ui-motion@^6.9.0":
   version "6.9.0"
   resolved "https://registry.yarnpkg.com/@instructure/ui-motion/-/ui-motion-6.9.0.tgz#617d35bcb3a60eede94ef261e0c3e88b2aca3243"
@@ -1131,6 +1154,29 @@
     "@instructure/ui-utils" "^6.9.0"
     "@instructure/uid" "^6.9.0"
     newless "^0.3.0"
+    prop-types "^15"
+
+"@instructure/ui-toggle-details@^6.9.0":
+  version "6.9.0"
+  resolved "https://registry.yarnpkg.com/@instructure/ui-toggle-details/-/ui-toggle-details-6.9.0.tgz#0a1bf3f4355b38874336cf5ebe0b874c673ef78c"
+  integrity sha512-qUpHT8ca2VgPPiV+dMAZGsaBdCuNeJnw3zh1X+4Tokg1Ry7Ukm1HkpPOEyC8at6xQUl43YfKNVykhJccdmvYXQ==
+  dependencies:
+    "@babel/runtime" "^7"
+    "@instructure/ui-a11y" "^6.9.0"
+    "@instructure/ui-buttons" "^6.9.0"
+    "@instructure/ui-dom-utils" "^6.9.0"
+    "@instructure/ui-elements" "^6.9.0"
+    "@instructure/ui-icons" "^6.9.0"
+    "@instructure/ui-layout" "^6.9.0"
+    "@instructure/ui-menu" "^6.9.0"
+    "@instructure/ui-motion" "^6.9.0"
+    "@instructure/ui-prop-types" "^6.9.0"
+    "@instructure/ui-react-utils" "^6.9.0"
+    "@instructure/ui-testable" "^6.9.0"
+    "@instructure/ui-themeable" "^6.9.0"
+    "@instructure/ui-utils" "^6.9.0"
+    "@instructure/uid" "^6.9.0"
+    classnames "^2"
     prop-types "^15"
 
 "@instructure/ui-utils@^6.9.0":

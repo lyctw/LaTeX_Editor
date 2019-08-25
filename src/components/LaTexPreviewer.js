@@ -20,7 +20,9 @@ export default class LaTexPreviewer extends React.Component {
     }
 
     handleAppendTex = (_tex) => {
-      this.setState((prevState) => ({latex: prevState.latex + _tex}))
+      const _tex_space = _tex + ' '
+      this.setState((prevState) => ({latex: prevState.latex + _tex_space}))
+      this.props.setPreviewerActivation(event.target.value + _tex_space);
     } 
   
     render() {

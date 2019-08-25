@@ -5,18 +5,15 @@ import RichEditor from './components/RichEditor'
 const App = () => {
   return (
       <div>
-      
+        
+        <p>123</p>
         <RichEditor 
-          // bounds={this.props.bounds}
-          // editorRef={this.props.editorRef}
+          bounds={'#right-nav'}
           placeholder={'請在此輸入您的回覆'}
-          // value={}
-          // onChange={(val) => {setContent(val)}}
           onDocumentChange={(html) => {
             console.log('doc:' + html)
           }}
         />
-
       </div>
   )
 };
