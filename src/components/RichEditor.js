@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import LaTexEditor from './LaTexEditor'
 import LaTexPreviewer from './LaTexPreviewer'
 import ReactQuill from 'react-quill'
+import 'react-quill/dist/quill.snow.css'
 import CustomToolbar from './CustomToolbar'
 import '@instructure/canvas-theme'
 import { Modal } from '@instructure/ui-overlays/lib/Modal'
@@ -9,7 +10,7 @@ import { CloseButton } from '@instructure/ui-buttons'
 import { Heading } from '@instructure/ui-elements/lib/Heading'
 import { Tabs } from '@instructure/ui-tabs'
 // import { Text } from '@instructure/ui-elements'
-import 'react-quill/dist/quill.snow.css'
+
 
 
 export default class RichEditor extends Component {
@@ -172,7 +173,7 @@ export default class RichEditor extends Component {
           theme="snow"
           modules={customModules}
           // ref={this.props.editorRef}
-          bounds="#right-nav"
+          bounds={this.props.bounds} //"#right-nav"
           placeholder={this.props.placeholder}
           preserveWhitespace
           onChange={(content, delta, source, editor) => {
