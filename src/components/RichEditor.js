@@ -59,7 +59,11 @@ export default class RichEditor extends Component {
 
   handleButtonClick = () => {
     this.setState((state) => {
-      return { open: !state.open }
+      return { 
+        open: !state.open,
+        useLaTexEditor: false,
+        useLaTexPreviewer: false
+      }
     })
   };
 

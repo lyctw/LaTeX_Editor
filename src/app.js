@@ -5,8 +5,6 @@ import RichEditor from './components/RichEditor'
 const App = () => {
   return (
       <div>
-        
-        <p>123</p>
         <RichEditor 
           bounds={'#right-nav'}
           placeholder={'請在此輸入您的回覆'}
