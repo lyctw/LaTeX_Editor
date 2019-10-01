@@ -35,12 +35,19 @@ export default class CustomToolbar extends React.Component {
                     {/* <button className="ql-image"></button> */}
                     {/* <button className="ql-video"></button> */}
         
+                    {/* Custom button - LaTeX  */}
                     <button className="math" onClick={() => {
                         // alert('click')
                         this.props.onToggleModal();
                     }}>
                         <img src={fx_svg} />
                     </button>
+
+                    {/* Custom button - image uploader */}
+                    <button className="img" onClick={() => {
+                        // console.log('// toggle FileDrop')
+                    }}>img</button>
+
                 </span>
             </div> 
         ) 

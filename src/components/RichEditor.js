@@ -1,15 +1,15 @@
 import React, { Component } from 'react'
+import '@instructure/canvas-theme'
 import LaTexEditor from './LaTexEditor'
 import LaTexPreviewer from './LaTexPreviewer'
 import ReactQuill from 'react-quill'
 import 'react-quill/dist/quill.snow.css'
 import CustomToolbar from './CustomToolbar'
-import '@instructure/canvas-theme'
 import { Modal } from '@instructure/ui-overlays/lib/Modal'
 import { CloseButton } from '@instructure/ui-buttons'
 import { Heading } from '@instructure/ui-elements/lib/Heading'
 import { Tabs } from '@instructure/ui-tabs'
-// import { Text } from '@instructure/ui-elements'
+
 
 
 
@@ -168,10 +168,13 @@ export default class RichEditor extends Component {
 
     return (
       <div>
+
         <CustomToolbar 
-          onToggleModal={this.handleButtonClick}
+          onToggleModal = { this.handleButtonClick }
         />
+
         <ReactQuill
+
           ref={(el) => { this.reactQuillRef = el }}
           id="quill"
           theme="snow"
@@ -181,6 +184,7 @@ export default class RichEditor extends Component {
           placeholder={this.props.placeholder}
           preserveWhitespace
           onChange={(content, delta, source, editor) => {
+
             // Need to store cursorPosition bacause editor will blur when Modal open 
             // and this.quillRef.getSelection() will be null
             const cursorPosition = (this.quillRef.getSelection()) ? this.quillRef.getSelection().index : this.state.cursorPosition;
@@ -190,15 +194,19 @@ export default class RichEditor extends Component {
             });
             console.log(this.state.content);
             this.props.onDocumentChange(this.state.content); 
+
           }}
           onChangeSelection={() => {
+
             const cursorPosition = (this.quillRef.getSelection()) ? this.quillRef.getSelection().index : this.state.cursorPosition;
             this.setState({cursorPosition});
+
           }}
           value={this.state.content}
+
         />
 
-        {this.renderMathModel()}
+        { this.renderMathModel() }
         
       </div>
     )
