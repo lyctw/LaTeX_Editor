@@ -158,6 +158,12 @@ export default class RichEditor extends Component {
     )
   }
 
+  renderImgUploaderModel() {
+    return (
+      <p>uploader :)</p>
+    )
+  }
+
   render() {
 
     const customModules = {
@@ -208,6 +214,8 @@ export default class RichEditor extends Component {
 
         { this.renderMathModel() }
         
+        { this.renderImgUploaderModel() }
+
       </div>
     )
   }

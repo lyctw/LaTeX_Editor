@@ -53,6 +53,13 @@ export default class CustomToolbar extends React.Component {
         ) 
     }
 } 
+
+{/* <ImgUploader 
+    onImageUpload={(imgUrl) => {
+    console.log(`app img: ${imgUrl}`)
+    }}
+/> */}
+
 /*
 const customModules = {
       toolbar: [
