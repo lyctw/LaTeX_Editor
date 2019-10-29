@@ -45,7 +45,7 @@ export default class RichEditor extends Component {
   }
   
   handleInsert = (latex) => {
-    const imgTag = (latex) ? `<img src="https://latex.codecogs.com/svg.latex?${latex}">` : '';
+    const imgTag = (latex) ? `<img src="https://latex.codecogs.com/gif.latex?${latex}">` : '';
     this.quillRef.clipboard.dangerouslyPasteHTML(this.state.cursorPosition, imgTag);
     this.setState({
         open: false, 
