@@ -54,3 +54,10 @@ const ImgUploader = ({onImageUpload}) => {
 
 export default ImgUploader; 
 
+/**
+
+Access key ID: AKIA2DBXNBOBQ5LS7J7P
+Secret access key: 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
+User ARN: arn:aws:iam::693753416579:user/ycuser
+
+ */
