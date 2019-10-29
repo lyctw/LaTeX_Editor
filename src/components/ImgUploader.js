@@ -6,7 +6,7 @@ import database from '../firebase/firebase'
 
 const ImgUploader = ({onImageUpload}) => {
 
-    return (
+    return ( 
         <FileDrop
             accept="image/*"
             onDropAccepted={([file]) => { 
