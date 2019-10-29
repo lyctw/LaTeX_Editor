@@ -1,3 +1,4 @@
+  
 import React from 'react'
 import { FileDrop } from '@instructure/ui-forms'
 import { Billboard } from '@instructure/ui-billboard'
@@ -6,7 +7,7 @@ import database from '../firebase/firebase'
 
 const ImgUploader = ({onImageUpload}) => {
 
-    return ( 
+    return (
         <FileDrop
             accept="image/*"
             onDropAccepted={([file]) => { 
@@ -53,11 +54,3 @@ const ImgUploader = ({onImageUpload}) => {
 };
 
 export default ImgUploader; 
-
-/**
-
-Access key ID: AKIA2DBXNBOBQ5LS7J7P
-Secret access key: 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
-User ARN: arn:aws:iam::693753416579:user/ycuser
-
- */
