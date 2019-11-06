@@ -6,7 +6,7 @@
 
 import React from 'react';
 import fx_svg from '../img/fx.svg'
-
+import img_svg from '../img/img.svg'
 
 export default class CustomToolbar extends React.Component {
     constructor(props) {
@@ -38,7 +38,7 @@ export default class CustomToolbar extends React.Component {
                     {/* Custom button - LaTeX  */}
                     <button className="math" onClick={() => {
                         // alert('click')
-                        this.props.onToggleModal();
+                        this.props.onToggleMathModal();
                     }}>
                         <img src={fx_svg} />
                     </button>
@@ -46,7 +46,10 @@ export default class CustomToolbar extends React.Component {
                     {/* Custom button - image uploader */}
                     <button className="img" onClick={() => {
                         // console.log('// toggle FileDrop')
-                    }}>img</button>
+                        this.props.onToggleImgModal();
+                    }}>
+                        <img src={img_svg} />
+                    </button>
 
                 </span>
             </div> 

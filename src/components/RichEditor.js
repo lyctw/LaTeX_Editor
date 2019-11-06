@@ -9,7 +9,7 @@ import { Modal } from '@instructure/ui-overlays/lib/Modal'
 import { CloseButton } from '@instructure/ui-buttons'
 import { Heading } from '@instructure/ui-elements/lib/Heading'
 import { Tabs } from '@instructure/ui-tabs'
-
+import ImgUploader from './ImgUploader'
 
 
 
@@ -19,7 +19,8 @@ export default class RichEditor extends Component {
     this.state = {
       content: '',
       cursorPosition: 0,
-      open: false,
+      openMath: false,
+      openImg:  false,
       selectedIndex: 0,
       // if use LaTexEditor, LaTexPreviewer should be disable and vise versa
       useLaTexEditor: false,
@@ -48,7 +49,7 @@ export default class RichEditor extends Component {
     const imgTag = (latex) ? `<img src="https://latex.codecogs.com/gif.latex?${latex}">` : '';
     this.quillRef.clipboard.dangerouslyPasteHTML(this.state.cursorPosition, imgTag);
     this.setState({
-        open: false, 
+        openMath: false, 
         useLaTexEditor: false,
         useLaTexPreviewer: false
     })
@@ -57,23 +58,44 @@ export default class RichEditor extends Component {
     this.quillRef.blur();
   }
 
-  handleButtonClick = () => {
+  handleInsertImg = (img_url) => {
+    const imgTag = (img_url) ? `<img src="${img_url}">` : '';
+    this.quillRef.clipboard.dangerouslyPasteHTML(this.state.cursorPosition, imgTag);
+    this.setState({
+        openImg: false
+    })
+    // console.log(this.quillRef.setSelection)
+    // this.quillRef.setSelection(this.state.cursorPosition); // doesn't work !?!?
+    this.quillRef.blur();
+  }
+
+
+  // CustomToolbar props 
+  handleMathButtonClick = () => {
     this.setState((state) => {
       return { 
-        open: !state.open,
+        openMath: !state.openMath,
         useLaTexEditor: false,
         useLaTexPreviewer: false
       }
     })
   };
 
+  handleImgButtonClick = () => {
+    this.setState((state) => {
+      return { 
+        openImg: !state.openImg
+      }
+    })
+  }
+
   renderMathModel() {
     return (
       <div style={{ padding: '0 0 0 0', margin: '0 auto' }}>
         <Modal
           as="form"
-          open={this.state.open}
-          onDismiss={() => { this.setState({ open: false }) }}
+          open={this.state.openMath}
+          onDismiss={() => { this.setState({ openMath: false }) }}
           onSubmit={this.handleFormSubmit}
           size="large"
           label="Modal Dialog"
@@ -84,7 +106,7 @@ export default class RichEditor extends Component {
               placement="end"
               offset="medium"
               variant="icon"
-              onClick={this.handleButtonClick}
+              onClick={this.handleMathButtonClick}
             >
               Close
             </CloseButton>
@@ -150,7 +172,7 @@ export default class RichEditor extends Component {
               </Tabs>
           </Modal.Body>
           {/* <Modal.Footer>
-            <Button onClick={this.handleButtonClick}>Close</Button>&nbsp;
+            <Button onClick={this.handleMathButtonClick}>Close</Button>&nbsp;
             <Button variant="primary" type="submit">Submit</Button>
           </Modal.Footer> */}
         </Modal>
@@ -158,11 +180,42 @@ export default class RichEditor extends Component {
     )
   }
 
-  renderImgUploaderModel() {
+  renderImgModel() {
     return (
-      <p>uploader :)</p>
+      <div style={{ padding: '0 0 0 0', margin: '0 auto' }}>
+        <Modal
+          as="form"
+          open={this.state.openImg}
+          onDismiss={() => { this.setState({ openImg: false }) }}
+          onSubmit={() => {}}
+          size="large"
+          label="Modal Dialog - Img"
+          shouldCloseOnDocumentClick
+        >
+          <Modal.Header padding="small">
+            <CloseButton
+              placement="end"
+              offset="medium"
+              variant="icon"
+              onClick={this.handleImgButtonClick}
+            >
+              Close
+            </CloseButton>
+            <Heading>Image Uploader</Heading>
+          </Modal.Header>
+          <Modal.Body>
+            <ImgUploader 
+              onImageUpload={(imgUrl) => {
+                console.log(`app img: ${imgUrl}`)
+              }}
+              handleInsertImg={this.handleInsertImg}
+            />
+          </Modal.Body>
+        </Modal>
+      </div>
     )
   }
+
 
   render() {
 
@@ -176,7 +229,8 @@ export default class RichEditor extends Component {
       <div>
 
         <CustomToolbar 
-          onToggleModal = { this.handleButtonClick }
+          onToggleMathModal = { this.handleMathButtonClick }
+          onToggleImgModal  = { this.handleImgButtonClick }
         />
 
         <ReactQuill
@@ -214,7 +268,8 @@ export default class RichEditor extends Component {
 
         { this.renderMathModel() }
         
-        { this.renderImgUploaderModel() }
+        { this.renderImgModel() }
+        
 
       </div>
     )

@@ -1,11 +1,10 @@
-  
 import React from 'react'
 import { FileDrop } from '@instructure/ui-forms'
 import { Billboard } from '@instructure/ui-billboard'
 import { Img } from '@instructure/ui-img'
 import database from '../firebase/firebase'
 
-const ImgUploader = ({onImageUpload}) => {
+const ImgUploader = ({onImageUpload, handleInsertImg}) => {
 
     return (
         <FileDrop
@@ -21,7 +20,7 @@ const ImgUploader = ({onImageUpload}) => {
                 task.on('state_changed', 
 
                     function progress(snapshot) {
-                        let percentage = (snapshot.bytesTransferred/snapshot.totalBytes)*100
+                        let percentage = (snapshot.bytesTransferred/snapshot.totalBytes)*100;
                         console.log(`Uploading: ${percentage}%`);
                     },
 
@@ -35,6 +34,7 @@ const ImgUploader = ({onImageUpload}) => {
                         task.snapshot.ref.getDownloadURL().then(function(downloadURL) {
                             // console.log('File available at', downloadURL);
                             onImageUpload(downloadURL);
+                            handleInsertImg(downloadURL);
                         });
                     }
                     
@@ -44,9 +44,9 @@ const ImgUploader = ({onImageUpload}) => {
             onDropRejected={([file]) => { console.log(`File rejected ${file.name}`) }}
             label={
                 <Billboard
-                heading="Upload your image"
-                message="Drag and drop, or click to browse your computer"
-                hero={<Img src={'https://i.imgur.com/IEeovdW.png'} />}
+                    heading="Upload your image"
+                    message="Drag and drop, or click to browse your computer"
+                    hero={<Img src={'https://i.imgur.com/IEeovdW.png'} />}
                 />
             }
         />

@@ -2,7 +2,7 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 import RichEditor from './components/RichEditor'
 
-import ImgUploader from './components/ImgUploader'
+
 
 const App = () => {
   return (
@@ -14,12 +14,6 @@ const App = () => {
             console.log('doc:' + html)
           }}
         /> 
-
-        <ImgUploader 
-          onImageUpload={(imgUrl) => {
-            console.log(`app img: ${imgUrl}`)
-          }}
-        />
       </div>
   )
 };
